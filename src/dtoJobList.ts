@@ -68,7 +68,7 @@ export interface Post {
   userOwnerUid?:         string;
   projectType?:          string;
   startType?:            string;
-  itemMonth?:            ItemMonth;
+  itemMonth?:            string;
   stepProject?:          number;
   userUid?:              string;
   new?:                  boolean;
@@ -80,12 +80,6 @@ export interface Post {
 export interface AtedAt {
   seconds?:     number;
   nanoseconds?: number;
-}
-
-export enum ItemMonth {
-  The092022 = "09-2022",
-  The102022 = "10-2022",
-  The112022 = "11-2022",
 }
 
 export interface Price {
@@ -314,7 +308,7 @@ const typeMap: any = {
       { json: "user_owner_uid", js: "userOwnerUid", typ: u(undefined, "") },
       { json: "project_type", js: "projectType", typ: u(undefined, "") },
       { json: "start_type", js: "startType", typ: u(undefined, "") },
-      { json: "item_month", js: "itemMonth", typ: u(undefined, r("ItemMonth")) },
+      { json: "item_month", js: "itemMonth", typ: u(undefined, "") },
       { json: "step_project", js: "stepProject", typ: u(undefined, 0) },
       { json: "user_uid", js: "userUid", typ: u(undefined, "") },
       { json: "new", js: "new", typ: u(undefined, true) },
@@ -344,10 +338,5 @@ const typeMap: any = {
       { json: "uid", js: "uid", typ: u(undefined, "") },
       { json: "image_profile", js: "imageProfile", typ: u(undefined, "") },
       { json: "name", js: "name", typ: u(undefined, "") },
-  ], false),
-  "ItemMonth": [
-      "09-2022",
-      "10-2022",
-      "11-2022",
-  ],
+  ], false), 
 };
